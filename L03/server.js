@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongodb = require('./db/connect');
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
 const app = express();
 
 app
@@ -16,8 +16,7 @@ app
 
 app
   .get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html');
-    
+    res.sendFile(__dirname + '/index.html');    
   });
   /*.post('/contacts', (req, res) => {
     console.log(req.body);

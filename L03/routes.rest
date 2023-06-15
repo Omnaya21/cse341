@@ -1,19 +1,45 @@
 // LOCALHOST
-###
+### Get all contacts
 GET http://localhost:8080/contacts
-###
+### Get contact by ID
 GET http://localhost:8080/contacts/64858a5999dedd5bb8616839
-###
-GET http://localhost:8080/contacts/64858a8d99dedd5bb861683a
-###
-GET http://localhost:8080/contacts/64858aa299dedd5bb861683b
+### Create contact 
+POST http://localhost:8080/contacts HTTP/1.1 content-type: application/json
+
+{
+"firstName":"Cristopher", "lastName":"Lane", "email":"cl@ingyso.com", "favoriteColor":"Brown", "birthday":"04/30/1986"
+}
+
+### PUT contact 
+PUT http://localhost:8080/contacts/648ac96dde5d705cd44cde7b HTTP/1.1 
+content-type: application/json
+
+{
+"firstName":"Omar", "lastName":"Navarro", "email":"onavarro@ingyso.com", "favoriteColor":"Blue", "birthday":"05/21/1976"
+} 
+
+### DELETE contact 
+DELETE http://localhost:8080/contacts/648ae9a9fe9b673c3ee001cd HTTP/1.1
+
 
 // PRODUCTION Deploy
-###
+### Get all contacts
 GET https://personal-assignment-2.onrender.com/contacts
-###
+### Get a contact by id
 GET https://personal-assignment-2.onrender.com/contacts/64858a5999dedd5bb8616839
-###
-GET https://personal-assignment-2.onrender.com/contacts/64858a8d99dedd5bb861683a
-###
-GET https://personal-assignment-2.onrender.com/contacts/64858aa299dedd5bb861683b
+### Create contact 
+POST https://cse341-instructor.herokuapp.com/contacts HTTP/1.1 content-type: application/json
+
+{
+"firstName":"Ashley", "lastName":"Weaver", "email":"aWeaver@test.com", "favoriteColor":"Brown", "birthday":"06/19/2000"
+}
+
+### PUT contact 
+PUT https://cse341-instructor.herokuapp.com/contacts/6220bcb39cd507e920c75a0b HTTP/1.1 content-type: application/json
+
+{
+"firstName":"Sarah", "lastName":"Birch", "email":"sarahB@gmail.com", "favoriteColor":"Yellow", "birthday":"06/12/20"
+}
+
+### DELETE contact 
+DELETE https://cse341-instructor.herokuapp.com/contacts/6220e34083149913680f9a64 HTTP/1.1
