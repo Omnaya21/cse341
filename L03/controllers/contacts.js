@@ -44,7 +44,7 @@ const postSingle = async (req, res) => {
       .collection('contacts')
       .insertOne(contact)
       .then(result => {
-        console.log(result.acknowledged);
+        console.log(result);
         //res.setHeader('Content-Type', 'application/json');
         if (result.acknowledged) {
           res.status(201).json(result);
@@ -74,12 +74,16 @@ const putSingle = async (req, res, next) => {
       .getDb()
       .db()
       .collection('contacts')
-      .replaceOne({ _id: userId }, contact);
-    if (result.modifiedCount > 0) {
-      res.status(204).send();
-    } else {
-      res.status(500).json(result.error || 'Error occurred while updating contact!');
-    }    
+      .replaceOne({ _id: userId }, contact)
+      .then(result => {
+        console.log(result);
+        if (result.modifiedCount > 0) {
+          res.status(204).send();
+        } else {
+          res.status(500).json(result.error || 'Error occurred while updating contact!');
+        } 
+      });
+       
   } else {
     res.status(500).json('Not enough data to update!');
   }
@@ -91,12 +95,16 @@ const deleteSingle = async (req, res) => {
     .getDb()
     .db()
     .collection('contacts')
-    .deleteOne({ _id: userId }, true);
-  if (result.deletedCount > 0) {
-    res.status(204).send();
-  } else {
-    res.status(500).json(result.error || 'Error occurred while deleting contact.');
-  }
+    .deleteOne({ _id: userId }, true)
+    .then(result => {
+      console.log(result);
+      if (result.deletedCount > 0) {
+        res.status(204).send();
+      } else {
+        res.status(500).json(result.error || 'Error occurred while deleting contact.');
+      }
+    });
+  
 };
 
 module.exports = { getAll, getSingle, postSingle, putSingle, deleteSingle };
