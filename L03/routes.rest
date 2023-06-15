@@ -23,13 +23,13 @@ content-type: application/json
 DELETE http://localhost:8080/contacts/648ae9a9fe9b673c3ee001cd HTTP/1.1
 
 
-// PRODUCTION Deploy
+// ------------------------------------------------  PRODUCTION Deploy -----------------------------------
 ### Get all contacts
-GET https://personal-assignment-2.onrender.com/contacts
+GET https://l03-assignment.onrender.com/contacts
 ### Get a contact by id
-GET https://personal-assignment-2.onrender.com/contacts/64858a5999dedd5bb8616839
+GET https://l03-assignment.onrender.com/contacts/64858a5999dedd5bb8616839
 ### Create contact 
-POST https://cse341-instructor.herokuapp.com/contacts HTTP/1.1 
+POST https://l03-assignment.onrender.com/contacts HTTP/1.1 
 content-type: application/json
 
 {
@@ -37,7 +37,7 @@ content-type: application/json
 }
 
 ### PUT contact 
-PUT https://cse341-instructor.herokuapp.com/contacts/6220bcb39cd507e920c75a0b HTTP/1.1 
+PUT https://l03-assignment.onrender.com/contacts/648ac8f41cae720ba6444d07 HTTP/1.1 
 content-type: application/json
 
 {
@@ -45,4 +45,4 @@ content-type: application/json
 }
 
 ### DELETE contact 
-DELETE https://cse341-instructor.herokuapp.com/contacts/6220e34083149913680f9a64 HTTP/1.1
+DELETE https://l03-assignment.onrender.com/contacts/648af3483edbb4e99367e742 HTTP/1.1
