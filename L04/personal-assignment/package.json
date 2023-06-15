@@ -1,0 +1,22 @@
+{
+  "name": "personal-assignment",
+  "version": "1.0.0",
+  "description": "L04 Personal Assignment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Omnaya21/cse341.git#week2"
+  },
+  "author": "Omar Navarro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Omnaya21/cse341/issues"
+  },
+  "homepage": "https://github.com/Omnaya21/cse341/tree/week2#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
