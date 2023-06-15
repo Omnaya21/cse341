@@ -30,14 +30,25 @@ const getSingle = async (req, res, next) => {
 const postSingle = async (req, res) => {  
   console.log(req.body);
 
-  const result = await mongodb.getDb().db().collection('contacts').insertOne(req.body);
+  const result = await mongodb
+    .getDb()
+    .db()
+    .collection('contacts')
+    .insertOne(req.body)
+    .then(result => {
+      console.log(result);
+      res.setHeader('Content-Type', 'application/json');
+      res.status(201).json(result);
+    })
+    .catch(error => console.error(error));
   
+  /*
   result.toArray().then((lists) => {
       console.log(result);
       res.setHeader('Content-Type', 'application/json');
       res.status(201).json(lists[0]);
     })
-    .catch(error => console.log(error)); 
+    .catch(error => console.log(error)); */
 };
 
 const putSingle = async (req, res, next) => {
