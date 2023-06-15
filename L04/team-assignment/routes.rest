@@ -1,0 +1,17 @@
+GET http://localhost:8080/temples
+Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
+
+// LOCALHOST
+### Get all temples
+GET http://localhost:8080/temples HTTP/1.1
+apiKey: Ezl0961tEpx2UxTZ5v2uKFK91qdNAr5npRlMT1zLcE3Mg68Xwaj3N8Dyp1R8IvFenrVwHRllOUxF0Og00l0m9NcaYMtH6Bpgdv7N
+
+### Get contact by ID
+GET http://localhost:8080/contacts/648b0465b7e94b51b692d164
+### Create contact 
+POST http://localhost:8080/contacts HTTP/1.1 
+content-type: application/json
+
+{
+"firstName":"Cristopher", "lastName":"Lane", "email":"cl@ingyso.com", "favoriteColor":"Brown", "birthday":"04/30/1986"
+}
