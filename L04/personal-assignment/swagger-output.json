@@ -8,7 +8,6 @@
   "host": "l04-personal-assignment.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http",
     "https"
   ],
   "paths": {
