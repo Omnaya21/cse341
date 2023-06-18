@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"username\": \"salonii131\",\n    \"password\": \"saloni123\",\n    \"email\": \"saloni@gmail.com\",\n    \"name\": \"Saloni\",\n    \"userType\": 1\n}",
+					"raw": "{\n    \"username\": \"omnaya\",\n    \"password\": \"12345\",\n    \"email\": \"test@gmail.com\",\n    \"name\": \"Omnaya\",\n    \"userType\": 1\n}",
 					"options": {
 						"raw": {
 							"language": "json"

@@ -16,10 +16,10 @@ paths:
             schema:
               type: object
               example:
-                username: salonii131
-                password: saloni123
-                email: saloni@gmail.com
-                name: Saloni
+                username: omnaya
+                password: '12345'
+                email: test@gmail.com
+                name: Omnaya
                 userType: 1
       responses:
         '200':

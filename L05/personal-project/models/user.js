@@ -47,5 +47,5 @@ schema.pre('save', async function (next) {
   next();
 });
 
-const User = mongoose.model('user', schema);
+const User = mongoose.model('users', schema);
 module.exports = User;
