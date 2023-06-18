@@ -3,28 +3,36 @@ const bodyParser = require('body-parser');
 const ObjectId = require('mongodb').ObjectId;
 
 const getAll = async (req, res, next) => {
-  const result = await mongodb
-    .getDb()
-    .db()
-    .collection('contacts')
-    .find();
-  result.toArray().then((lists) => {
-    res.setHeader('Content-Type', 'application/json');
-    res.status(200).json(lists);
-  });
+  try {
+    const result = await mongodb
+      .getDb()
+      .db()
+      .collection('contacts')
+      .find();
+    result.toArray().then((lists) => {
+      res.setHeader('Content-Type', 'application/json');
+      res.status(200).json(lists);
+    });
+  } catch (err) {
+    res.status(500).json({message: err.message});
+  }
 };
 
 const getSingle = async (req, res, next) => {
-  const userId = new ObjectId(req.params.id);
-  const result = await mongodb
-    .getDb()
-    .db()
-    .collection('contacts')
-    .find({ _id: userId });
-  result.toArray().then((lists) => {
-    res.setHeader('Content-Type', 'application/json');
-    res.status(200).json(lists[0]);
-  });
+  try {
+    const userId = new ObjectId(req.params.id);
+    const result = await mongodb
+      .getDb()
+      .db()
+      .collection('contacts')
+      .find({ _id: userId });
+    result.toArray().then((lists) => {
+      res.setHeader('Content-Type', 'application/json');
+      res.status(200).json(lists[0]);
+    });
+  } catch (err) {
+      res.status(500).json({message: err.message});
+  }
 };
 
 const postSingle = async (req, res) => {  
@@ -90,21 +98,24 @@ const putSingle = async (req, res, next) => {
 };
 
 const deleteSingle = async (req, res) => {
-  const userId = new ObjectId(req.params.id);
-  const result = await mongodb
-    .getDb()
-    .db()
-    .collection('contacts')
-    .deleteOne({ _id: userId }, true)
-    .then(result => {
-      console.log(result);
-      if (result.deletedCount > 0) {
-        res.status(204).send();
-      } else {
-        res.status(500).json(result.error || 'Error occurred while deleting contact.');
-      }
-    });
-  
+  try {
+    const userId = new ObjectId(req.params.id);
+    const result = await mongodb
+      .getDb()
+      .db()
+      .collection('contacts')
+      .deleteOne({ _id: userId }, true)
+      .then(result => {
+        console.log(result);
+        if (result.deletedCount > 0) {
+          res.status(204).send();
+        } else {
+          res.status(500).json(result.error || 'Error occurred while deleting contact.');
+        }
+      });
+  } catch (err) {
+    res.status(500).json({message: err.message});
+  }
 };
 
 module.exports = { getAll, getSingle, postSingle, putSingle, deleteSingle };

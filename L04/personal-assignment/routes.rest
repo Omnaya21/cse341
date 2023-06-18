@@ -1,0 +1,48 @@
+// LOCALHOST
+### Get all contacts
+GET http://localhost:8080/contacts
+### Get contact by ID
+GET http://localhost:8080/contacts/648b0465b7e94b51b692d164
+### Create contact 
+POST http://localhost:8080/contacts HTTP/1.1 
+content-type: application/json
+
+{
+"firstName":"Cristopher", "lastName":"Lane", "email":"cl@ingyso.com", "favoriteColor":"Brown", "birthday":"04/30/1986"
+}
+
+### PUT contact 
+PUT http://localhost:8080/contacts/648ae958d41653733dad6a5e HTTP/1.1 
+content-type: application/json
+
+{
+"firstName":"Omar", "lastName":"Navarro", "email":"onavarro@ingyso.com", "favoriteColor":"Blue", "birthday":"05/21/1976"
+} 
+
+### DELETE contact 
+DELETE http://localhost:8080/contacts/648b03749a1becd4dea76fd6 HTTP/1.1
+
+
+// ------------------------------------------------  PRODUCTION Deploy -----------------------------------
+### Get all contacts
+GET https://l04-personal-assignment.onrender.com/contacts
+### Get a contact by id
+GET https://l04-personal-assignment.onrender.com/contacts/64858a5999dedd5bb8616839
+### Create contact 
+POST https://l04-personal-assignment.onrender.com/contacts HTTP/1.1 
+content-type: application/json
+
+{
+"firstName":"Cristopher", "lastName":"Lane", "email":"cl@ingyso.com", "favoriteColor":"Brown", "birthday":"04/30/1986"
+}
+
+### PUT contact 
+PUT https://l04-personal-assignment.onrender.com/contacts/648ac8f41cae720ba6444d07 HTTP/1.1 
+content-type: application/json
+
+{
+"firstName":"Omar", "lastName":"Navarro", "email":"onavarro@ingyso.com", "favoriteColor":"Blue", "birthday":"05/21/1976"
+}
+
+### DELETE contact 
+DELETE https://l04-personal-assignment.onrender.com/contacts/648b0465b7e94b51b692d164 HTTP/1.1
