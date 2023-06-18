@@ -5,8 +5,11 @@ const mongodb = require('./db/connect');
 const port = process.env.PORT || 8080;
 const app = express();
 
+const swaggerUi = require('swagger-ui-express');
+const swaggerFile = require('./swagger-output.json');
+
 app
-  //.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerFile))  
+  .use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerFile))  
   .use(bodyParser.json())
   .use(bodyParser.urlencoded({ extended: true}))
   .use((req, res, next) => {
@@ -20,15 +23,6 @@ app
     next();
   })
   .use('/', require('./routes'));
-
-  /*
-app
-  .get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html');    
-  });
-  /*.post('/contacts', (req, res) => {
-    console.log(req.body);
-  });*/
 
 mongodb.initDb((err, mongodb) => {
   if (err) {
