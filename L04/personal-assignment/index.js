@@ -9,7 +9,7 @@ const swaggerUi = require('swagger-ui-express');
 const swaggerFile = require('./swagger-output.json');
 
 app
-  .use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile))  
+  .use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerFile))  
   .use(bodyParser.json())
   .use(bodyParser.urlencoded({ extended: true}))
   /*.use((req, res, next) => {
