@@ -14,6 +14,10 @@
   },
   "author": "Omar Navarro",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Omnaya21/cse341/issues"
+  },
+  "homepage": "https://github.com/Omnaya21/cse341/tree/week3#readme",
   "dependencies": {
     "body-parser": "^1.20.2",
     "dotenv": "^16.3.1",
