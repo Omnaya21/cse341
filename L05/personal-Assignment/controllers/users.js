@@ -39,7 +39,7 @@ const newUser = async (req, res) => {
   const user = {
     username: req.body.username,
     password: req.body.password,
-    fullname: req.body.name,
+    fullname: req.body.fullname,
     email: req.body.email,
     type: req.body.type,
     status: req.body.status
@@ -72,7 +72,7 @@ const editUser = async (req, res, next) => {
   const user = {
     username: req.body.username,
     password: req.body.password,
-    fullname: req.body.name,
+    fullname: req.body.fullname,
     email: req.body.email,
     type: req.body.type,
     status: req.body.status
