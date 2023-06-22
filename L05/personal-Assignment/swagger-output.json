@@ -44,22 +44,22 @@
               "type": "object",
               "properties": {
                 "username": {
-                  "example": "any"
+                  "example": "user1"
                 },
                 "password": {
-                  "example": "any"
+                  "example": "password1"
                 },
                 "fullname": {
-                  "example": "any"
+                  "example": "User 1"
                 },
                 "email": {
-                  "example": "any"
+                  "example": "user1@test.com"
                 },
                 "type": {
-                  "example": "any"
+                  "example": "1"
                 },
                 "status": {
-                  "example": "any"
+                  "example": "active"
                 }
               }
             }
@@ -114,22 +114,22 @@
               "type": "object",
               "properties": {
                 "username": {
-                  "example": "any"
+                  "example": "user1"
                 },
                 "password": {
-                  "example": "any"
+                  "example": "password1"
                 },
                 "fullname": {
-                  "example": "any"
+                  "example": "User 1"
                 },
                 "email": {
-                  "example": "any"
+                  "example": "user1@test.com"
                 },
                 "type": {
-                  "example": "any"
+                  "example": "1"
                 },
                 "status": {
-                  "example": "any"
+                  "example": "active"
                 }
               }
             }
@@ -190,25 +190,25 @@
               "type": "object",
               "properties": {
                 "memberName": {
-                  "example": "any"
+                  "example": "John Smith"
                 },
                 "leaderName": {
-                  "example": "any"
+                  "example": "John Taylor"
                 },
                 "phone": {
-                  "example": "any"
+                  "example": "444 1234567"
                 },
                 "email": {
-                  "example": "any"
+                  "example": "john@test.com"
                 },
                 "date": {
-                  "example": "any"
+                  "example": "06/25/2023"
                 },
                 "time": {
-                  "example": "any"
+                  "example": "19:00"
                 },
                 "status": {
-                  "example": "any"
+                  "example": "current"
                 }
               }
             }
@@ -275,25 +275,25 @@
               "type": "object",
               "properties": {
                 "memberName": {
-                  "example": "any"
+                  "example": "John Smith"
                 },
                 "leaderName": {
-                  "example": "any"
+                  "example": "John Taylor"
                 },
                 "phone": {
-                  "example": "any"
+                  "example": "444 1234567"
                 },
                 "email": {
-                  "example": "any"
+                  "example": "john@test.com"
                 },
                 "date": {
-                  "example": "any"
+                  "example": "06/26/2023"
                 },
                 "time": {
-                  "example": "any"
+                  "example": "19:30"
                 },
                 "status": {
-                  "example": "any"
+                  "example": "current"
                 }
               }
             }
