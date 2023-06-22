@@ -18,7 +18,7 @@ const getSingle = async (req, res) => {
   });
 };
 
-const createContact = async (req, res) => {
+const createContact = async (req, res, next) => {
   const contact = {
     firstName: req.body.firstName,
     lastName: req.body.lastName,
