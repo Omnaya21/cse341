@@ -30,7 +30,7 @@
     "node": ">=14.20.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.22",
-    "swagger-autogen": "^2.23.2"
+    "nodemon": "^1.14.9",
+    "swagger-autogen": "^2.23.4"
   }
 }
