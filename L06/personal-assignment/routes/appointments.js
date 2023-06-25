@@ -8,7 +8,7 @@ const router = express.Router();
 router.get('/', appointmentstsController.getAllAppointments);
 router.get('/:id', idValidationRules(), validateCollection, appointmentstsController.getAppointment);
 router.post('/', appointmentValidationRules(), validateCollection, appointmentstsController.newAppointment);
-router.put('/:id', appointmentValidationRules(), validateCollection, appointmentstsController.editAppointment);
+router.put('/:id',idValidationRules(), appointmentValidationRules(), validateCollection, appointmentstsController.editAppointment);
 router.delete('/:id', idValidationRules(), validateCollection, appointmentstsController.deleteAppointment);
 router.delete('/', appointmentstsController.deleteAllAppointments);
 
