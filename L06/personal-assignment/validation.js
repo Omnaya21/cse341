@@ -38,7 +38,7 @@ const validateCollection = (req, res, next) => {
   }
   const extractedErrors = [];
   errors.array().map((err) => {
-    //console.log({err});
+    console.log({err});
     extractedErrors.push({[err.path]: err.msg});
   });
 
