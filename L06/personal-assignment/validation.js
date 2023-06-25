@@ -26,7 +26,7 @@ const userValidationRules = () => {
 
 const idValidationRules = () => {
   return [
-    check('_id', 'Invalid or missing ID to delete!.').not().isEmpty()
+    check('_id', 'Invalid or missing ID!.').not().isEmpty()
   ]
 }
 
