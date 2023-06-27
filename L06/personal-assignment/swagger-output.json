@@ -44,16 +44,16 @@
               "type": "object",
               "properties": {
                 "username": {
-                  "example": "user1"
+                  "example": "user2"
                 },
                 "password": {
-                  "example": "password1"
+                  "example": "password2"
                 },
                 "fullname": {
-                  "example": "User 1"
+                  "example": "User 2"
                 },
                 "email": {
-                  "example": "user1@test.com"
+                  "example": "user2@test.com"
                 },
                 "type": {
                   "example": "1"
@@ -68,6 +68,9 @@
         "responses": {
           "201": {
             "description": "Created"
+          },
+          "422": {
+            "description": "Unprocessable Entity"
           },
           "500": {
             "description": "Internal Server Error"
@@ -114,16 +117,16 @@
               "type": "object",
               "properties": {
                 "username": {
-                  "example": "user1"
+                  "example": "user2"
                 },
                 "password": {
-                  "example": "password1"
+                  "example": "password2"
                 },
                 "fullname": {
-                  "example": "User 1"
+                  "example": "User 2"
                 },
                 "email": {
-                  "example": "user1@test.com"
+                  "example": "user2@test.com"
                 },
                 "type": {
                   "example": "1"
@@ -138,6 +141,9 @@
         "responses": {
           "204": {
             "description": "No Content"
+          },
+          "422": {
+            "description": "Unprocessable Entity"
           },
           "500": {
             "description": "Internal Server Error"
@@ -190,25 +196,25 @@
               "type": "object",
               "properties": {
                 "memberName": {
-                  "example": "John Smith"
+                  "example": "Member 1"
                 },
                 "leaderName": {
-                  "example": "John Taylor"
+                  "example": "Leader 1"
                 },
                 "phone": {
-                  "example": "444 1234567"
+                  "example": "123 1234567"
                 },
                 "email": {
-                  "example": "john@test.com"
+                  "example": "test@test.com"
                 },
                 "date": {
-                  "example": "06/25/2023"
+                  "example": "06/24/2023"
                 },
                 "time": {
-                  "example": "19:00"
+                  "example": "17:00"
                 },
                 "status": {
-                  "example": "current"
+                  "example": "active"
                 }
               }
             }
@@ -217,6 +223,9 @@
         "responses": {
           "201": {
             "description": "Created"
+          },
+          "422": {
+            "description": "Unprocessable Entity"
           },
           "500": {
             "description": "Internal Server Error"
@@ -275,25 +284,25 @@
               "type": "object",
               "properties": {
                 "memberName": {
-                  "example": "John Smith"
+                  "example": "Member 1"
                 },
                 "leaderName": {
-                  "example": "John Taylor"
+                  "example": "Leader 1"
                 },
                 "phone": {
-                  "example": "444 1234567"
+                  "example": "123 1234567"
                 },
                 "email": {
-                  "example": "john@test.com"
+                  "example": "test@test.com"
                 },
                 "date": {
-                  "example": "06/26/2023"
+                  "example": "06/24/2023"
                 },
                 "time": {
-                  "example": "19:30"
+                  "example": "19:00"
                 },
                 "status": {
-                  "example": "current"
+                  "example": "active"
                 }
               }
             }
@@ -302,6 +311,9 @@
         "responses": {
           "204": {
             "description": "No Content"
+          },
+          "422": {
+            "description": "Unprocessable Entity"
           },
           "500": {
             "description": "Internal Server Error"
