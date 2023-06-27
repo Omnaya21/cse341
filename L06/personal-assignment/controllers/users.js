@@ -106,7 +106,7 @@ const deleteUser = async (req, res) => {
       .then(result => {
         console.log(result);
         if (result.deletedCount > 0) {
-          res.status(204).send();
+          res.status(200).send();
         } else {
           res.status(500).json(result.error || 'Error occurred while deleting user!');
         }

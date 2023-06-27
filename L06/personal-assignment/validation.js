@@ -1,12 +1,3 @@
-/*const { check } = require('express-validator');
- 
-exports.contactsValidation = [
-    check('firstName', 'First Name is requied').not().isEmpty(),
-    check('lastName', 'Last Name is requied').not().isEmpty(),
-    check('email', 'Please include a valid email').isEmail().normalizeEmail(),
-    check('birthday', 'Date incorrect').isDate().not().isEmpty()
-]*/
-
 const {check, validationResult} = require('express-validator');
 
 const appointmentValidationRules = () => {
@@ -15,7 +6,7 @@ const appointmentValidationRules = () => {
     check('leaderName', 'Leader Name is required').not().isEmpty(),
     check('phone', 'Phone is required').not().isEmpty(),
     check('email', "Invalid email").isEmail().not().isEmpty(),
-    check('date', 'Invalid  date').isDate().not().isEmpty(),
+    check('date', 'Invalid  date').not().isEmpty(),
     check('time', 'Invalid time').isTime().not().isEmpty(),
     check('status','Status is required').not().isEmpty()
   ]
@@ -33,6 +24,12 @@ const userValidationRules = () => {
   ]
 }
 
+const idValidationRules = () => {
+  return [
+    check('id', 'Invalid or missing ID!.').not().isEmpty()
+  ]
+}
+
 const validateCollection = (req, res, next) => {
   const errors = validationResult(req);
 
@@ -41,7 +38,7 @@ const validateCollection = (req, res, next) => {
   }
   const extractedErrors = [];
   errors.array().map((err) => {
-    //console.log({err});
+    console.log({err});
     extractedErrors.push({[err.path]: err.msg});
   });
 
@@ -53,5 +50,6 @@ const validateCollection = (req, res, next) => {
 module.exports = {
   appointmentValidationRules,
   userValidationRules,
+  idValidationRules,
   validateCollection
 };
