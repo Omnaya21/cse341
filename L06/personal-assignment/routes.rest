@@ -1,0 +1,122 @@
+// LOCALHOST
+### Get all appointments
+GET http://localhost:8080/appointments
+
+### Get appointment by id
+GET http://localhost:8080/appointments/622023f642f9ab4cd6e060b3
+
+### Create appointment
+POST http://localhost:8080/appointments HTTP/1.1
+content-type: application/json
+
+{
+  "memberName": "John Smith",
+  "leaderName": "John Taylor",
+  "phone": "444 1234567",
+  "email": "john@test.com",
+  "date": "06/25/2023",
+  "time": "19:00",
+  "status": "current"
+}
+
+### PUT appointment
+PUT http://localhost:8080/appointments/6220bcb39cd507e920c75a0b HTTP/1.1
+content-type: application/json
+
+{
+  "memberName": "John Smith",
+  "leaderName": "John Taylor",
+  "phone": "444 1234567",
+  "email": "john@test.com",
+  "date": "06/25/2023",
+  "time": "19:00",
+  "status": "current"
+}
+### DELETE appointment
+DELETE http://localhost:8080/appointments/6220b775099269ff7b31ceab HTTP/1.1
+
+// -------------------------------------------- PRODUCTION Deploy ---------------------------------------------
+### Get all appointments
+GET https://l05-personal-assignment.onrender.com/appointments
+
+
+### Get appointment by id
+GET https://l05-personal-assignment.onrender.com/appointments/622023f642f9ab4cd6e060b3
+
+
+### Create appointment
+POST https://l05-personal-assignment.onrender.com/appointments HTTP/1.1
+content-type: application/json
+
+{
+  "memberName": "John Smith",
+  "leaderName": "John Taylor",
+  "phone": "444 1234567",
+  "email": "john@test.com",
+  "date": "06/25/2023",
+  "time": "19:00",
+  "status": "current"
+}
+
+
+### PUT appointment
+PUT https://l05-personal-assignment.onrender.com/appointments/6220bcb39cd507e920c75a0b HTTP/1.1
+content-type: application/json
+
+{
+  "memberName": "John Smith",
+  "leaderName": "John Taylor",
+  "phone": "444 1234567",
+  "email": "john@test.com",
+  "date": "06/25/2023",
+  "time": "19:00",
+  "status": "current"
+}
+
+
+### DELETE appointment
+DELETE https://l05-personal-assignment.onrender.com/appointments/6220e34083149913680f9a64 HTTP/1.1
+
+
+### DELETE ALL appointment
+DELETE https://l05-personal-assignment.onrender.com/appointments HTTP/1.1
+
+// -------------------------------------------- PRODUCTION Deploy USERS ---------------------------------------------
+
+### Get all users
+GET https://l05-personal-assignment.onrender.com/users
+
+
+### Get user by id
+GET https://l05-personal-assignment.onrender.com/users/622023f642f9ab4cd6e060b3
+
+
+### Create user
+POST https://l05-personal-assignment.onrender.com/users HTTP/1.1
+content-type: application/json
+
+{
+  "username": "user1",
+  "password": "password1",
+  "fullname": "User 1",
+  "email": "user1@test.com",
+  "type": 1,
+  "status": "active"
+}
+
+
+### PUT user
+PUT https://l05-personal-assignment.onrender.com/users/6220bcb39cd507e920c75a0b HTTP/1.1
+content-type: application/json
+
+{
+  "username": "user1",
+  "password": "password1",
+  "fullname": "User 1",
+  "email": "user1@test.com",
+  "type": 1,
+  "status": "active"
+}
+
+### DELETE user
+DELETE https://l05-personal-assignment.onrender.com/users/6220e34083149913680f9a64 HTTP/1.1
