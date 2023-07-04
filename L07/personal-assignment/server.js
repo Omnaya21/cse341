@@ -1,6 +1,17 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongodb = require('./db/connect');
+const {auth} = require('express-openid-connect');
+require('dotenv').config();
+
+const config = {
+  authRequired: false,
+  auth0Logout: true,
+  secret: process.env.SECRET,
+  baseURL: process.env.BASE_URL,
+  clientID: process.env.CLIENT_ID,
+  issuerBaseURL: process.env.ISSUER_BASE_URL
+};
 
 const port = process.env.PORT || 8080;
 const app = express();
@@ -9,6 +20,7 @@ const swaggerUi = require('swagger-ui-express');
 const swaggerFile = require('./swagger-output.json');
 
 app
+  .use(auth(config))
   .use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerFile)) 
   .use(bodyParser.json())
   .use(bodyParser.urlencoded({ extended: true}))
@@ -24,14 +36,18 @@ app
   })
   .use('/', require('./routes'));
 
-  app.use((err, req, res, next) => {
-    console.log(err);
-    err.statusCode = err.statusCode || 500;
-    err.message = err.message || "Internal Server Error";
-    res.status(err.statusCode).json({
-      message: err.message,
-    });
+app.get('/', (req, res) => {
+  res.send(req.oidc.isAuthenticated() ? 'Logged In' : 'Logged Out');
+})
+
+app.use((err, req, res, next) => {
+  console.log(err);
+  err.statusCode = err.statusCode || 500;
+  err.message = err.message || "Internal Server Error";
+  res.status(err.statusCode).json({
+    message: err.message,
   });
+});
 
 mongodb.initDb((err, mongodb) => {
   if (err) {
